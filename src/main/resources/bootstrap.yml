@@ -1,0 +1,33 @@
+server:
+  port: 8088
+
+spring:
+  application:
+    name: srt-cloud-quartz
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${nacos_host:127.0.0.1}:${nacos_port:8848}
+        # 命名空间，默认：public
+        namespace: ${nacos_namespace:89789fca-6bc6-45fa-938a-d589c0a011a4}
+        service: ${spring.application.name}
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        namespace: ${spring.cloud.nacos.discovery.namespace}
+        file-extension: yaml
+        # 指定配置
+        extension-configs:
+          - data-id: datasource.yaml
+            refresh: true
+# feign 配置
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 1200000
+        readTimeout: 1200000
+        loggerLevel: basic
+  okhttp:
+    enabled: true

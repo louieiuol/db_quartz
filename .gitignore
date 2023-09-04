@@ -1,0 +1,30 @@
+# Compiled class file
+*.class
+
+# Log file
+logs/
+*.log
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# 问题集
+问题集/
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+.idea
+*.iml
+*.war
+*.nar
+*.ear
+*.tar.gz
+*.rar
+target/
+**/target/
+/jdbc驱动包/
